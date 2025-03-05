@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import { Inter_500Medium, useFonts } from "@expo-google-fonts/inter";
+import Animated, { LinearTransition } from "react-native-reanimated";
 
 import { data } from "@/data/todos";
 
@@ -97,11 +98,13 @@ export default function Index() {
           />
         </Pressable>
       </View>
-      <FlatList
+      <Animated.FlatList
         data={todos}
         renderItem={renderItem}
         keyExtractor={(todo) => todo.id}
         contentContainerStyle={{ flexGrow: 1 }}
+        itemLayoutAnimation={LinearTransition}
+        keyboardDismissMode="on-drag"
       />
     </SafeAreaView>
   );
