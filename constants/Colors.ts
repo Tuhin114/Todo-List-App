@@ -1,3 +1,4 @@
+// This file defines the color schemes for both light and dark themes used in the app.
 export const Colors = {
   light: {
     text: "black",
