@@ -89,14 +89,4 @@ export const data = [
     title: "Pay the bills",
     completed: false,
   },
-  {
-    id: 19,
-    title: "Research for the article",
-    completed: true,
-  },
-  {
-    id: 20,
-    title: "Set up the new computer",
-    completed: false,
-  },
 ];
