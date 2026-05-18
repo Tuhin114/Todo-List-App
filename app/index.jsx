@@ -68,6 +68,12 @@ export default function Index() {
   const styles = createStyles(theme, colorScheme);
 
   const addTodo = () => {
+    const alreadyExists = todos.some(
+      (todo) => todo.title.toLowerCase() === text.toLowerCase()
+    );
+
+    if (alreadyExists) return;
+
     if (text.trim()) {
       const newId = todos.length > 0 ? todos[0].id + 1 : 1;
       setTodos([{ id: newId, title: text, completed: false }, ...todos]);
